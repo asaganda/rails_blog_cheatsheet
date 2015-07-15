@@ -221,5 +221,17 @@ Commit and merge what we just did--styling and structure
 	git add .
 	git commit -m "Styling and Structure"
 
-Switch to the master branch
-	git checkout master
+Merging styling branch into master so that styling/structure updates are in the master branch 
+	Switch to the master branch
+		<!-- we make sure that no files are untracked/not committed/etc so our directory is clean -->
+		git checkout master
+		<!-- switched into master branch -->
+		git merge styling
+		<!-- now master branch has everything styling branch has, both branches have same information but we can go back and work on master again -->
+			<!-- merging the more up to date branch (styling) into the branch that needs updating (master) via this command...this can also be done on github site by comparing code and getting green notice that the two branches are able to merge with no merge conflicts -->
+
+At the moment, a user can technically create a new post without typing anything in the box and the app would save it, we don't want to be able to do that. We have no validations in place that will throw errors if for ex: we don't have a post or if we're missing the body text. We're going to fix that.
+
+
+
+		
