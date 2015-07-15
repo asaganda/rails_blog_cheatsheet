@@ -215,7 +215,11 @@ We wrap the new post form in a "page_wrapper" div
 We wrap the show.html.erb in a "post_content" div
 	<!-- check the code in the show.html.erb file -->
 
-Commit and merge what we just did--styling
+Commit and merge what we just did--styling and structure
 	git status
 	<!-- untracked modified files -->
-	git add 
+	git add .
+	git commit -m "Styling and Structure"
+
+Switch to the master branch
+	git checkout master
