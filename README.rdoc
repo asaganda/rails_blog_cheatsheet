@@ -232,6 +232,21 @@ Merging styling branch into master so that styling/structure updates are in the 
 
 At the moment, a user can technically create a new post without typing anything in the box and the app would save it, we don't want to be able to do that. We have no validations in place that will throw errors if for ex: we don't have a post or if we're missing the body text. We're going to fix that.
 
+open file app < models < post.rb
 
+edit to add validations
+	add some validations to our model regarding the post
+	<!-- check code -->
 
+open file app < controllers < posts_controller.rb
+
+edit new method and create method
+	<!-- check code -->
+
+we want to be able to add error messages to our posts and see them so we want to add this to new.html.erb file
+
+edit new.html.erb file
+  <!-- check code within the form with div id errors -->
+
+Our validations work now
 		

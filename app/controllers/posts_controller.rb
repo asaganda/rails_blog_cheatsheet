@@ -6,15 +6,23 @@ class PostsController < ApplicationController
 	end
 
 	def new
+		@post = Post.new
 	end
 
 	# in order to save post
 	def create
 	# this creates/saves the post
 	@post = Post.new(post_params)
-	@post.save
-
-	redirect_to @post
+		# if a post saves, were going to redirect to the post itself to view it
+		if @post.save
+			redirect_to @post
+		else
+			# "/post/new" url
+			# we want render instead of redirect because 
+			# render keeps the content in place whereas 
+			# redirect loads another page and content is lost
+			render 'new'
+		end
 	end
 
 	def show
