@@ -16,4 +16,15 @@
 	<p class="body">
 		<%= @post.body %>
 	</p>
+	<!-- will wrap around all the comments -->
+	<!-- comment partial -->
+	<div id="comments">
+		<!-- count number of comments -->
+		<h2><%= @post.comments.count %> Comments</h2>
+		<!-- grabbing _comments.html.erb -->
+		<%= render @post.comments %>
+		<h3>Add a comment:</h3>
+		<!-- grabbing the _form.html.erb -->
+		<%= render "comments/form" %>
+	</div>
 </div>

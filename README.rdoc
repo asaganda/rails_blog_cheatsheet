@@ -289,3 +289,65 @@ Now we are able to edit an delete posts
 He wants to redirect back to the root path rather than the posts path listing all the posts
 
 sanity check: delete working and routing back to the root
+
+Next, we want the ability to add comments to the posts
+  We need to create a new model to hold the comments
+  open terminal
+    <!-- comment belongs to a post so that's why we have the reference -->
+    rails g model Comment name:string body:text post:references
+    this creates a comment model in the app > models directory with the relationship between comment and post set up
+  if we look at db/migrate, there is a create_comments.rb migration file with the database table column set up also after which we run the migration file:
+    <!-- rake db:migrate -->
+  we need to add an association to the posts
+    under posts.rb
+      <!-- check code -->
+  next we need to add routes for comments in the routes.rb file
+    <!-- nested routes -->
+NOTE: 
+running rake routes in the terminal will show all the routes/paths we have made/have access to
+  we see /posts/.../comments because we have the comments route nested with posts
+
+Now we need to generate a comment controller
+  open terminal
+    rails g controller Comments
+
+	In order to create a comment, we need to have a create action inside of the controller
+		check code
+
+NOTE: Next we're going to create a few partials and then import them into the post show page
+
+create in views > comments the new partial pages
+ 	_form.html.erb
+	_comment.html.erb
+
+open comments > _form.html.erb
+	type..
+	<!-- check code -->
+
+open comments > _comment.html.erb
+	type..
+	<!-- check code -->
+
+open posts > show.html.erb
+ 	type..
+ 	<!-- check code under post body where comments starts -->
+
+Now we can add comments to posts
+A ton of spam if we can't delete comments
+
+Need to add the ability of a user to delete a comment
+
+open comments controller
+	type..
+	<!-- check code -->
+	
+open _comment.html.erb
+	type..
+	<!-- check code below the comment div -->
+
+Now we can delete comments of a particular post
+Next: deleting posts and the comments attached with it
+
+open post model, post.rb
+	type..
+	<!-- check code after the comma of the line has_many -->

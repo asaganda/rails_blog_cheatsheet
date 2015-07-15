@@ -1,0 +1,20 @@
+<!-- what the comments will actually look like -->
+<!-- how they're going to be structured -->
+
+<!-- each comment is going to be inside a class comment -->
+<div class="comment clearfix">
+  <!-- comment content div -->
+  <!-- we put it in a content_content because we're going to add a delete button -->
+  <div class="comment_content">
+    <!-- name/body/time of a comment -->
+    <p class="comment_name"><strong><%= comment.name %></strong>/<p>
+    <p class="comment_body"><%= comment.body %></p>
+    <p class="comment_time"><%= time_ago_in_words(comment.created_at) %> Ago</p>
+  </div>
+  <!-- button link to delete a comment and an alert confirming if we want to delete -->
+  <p><%= link_to 'Delete', [comment.post, comment],
+                  method: :delete,
+                  class: "button",
+                  data: { confirm: 'Are you sure?' }%>
+  </p>
+</div>
