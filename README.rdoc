@@ -87,6 +87,8 @@ NOTE:
 Next we want the ability to create new posts
 
 open PostsController
+	<!-- We're going to add a new method(or action), named "new" -->
+	<!-- one of the 7 RESTful actions -->
 	type..
 		def new
 		end
@@ -116,6 +118,7 @@ open PostsController
 		<!-- check code -->
 		end
 		<!-- add private params and check code -->
+	[private method created for the post_params allowing title/body for the post]
 
 create posts show.html.erb file
 	<!-- this is where the post lives -->
@@ -148,3 +151,71 @@ edit index.html.erb file
 open terminal
 <!-- If you would like to push to github, create repository now, add remote and push -->
 git commit the changes
+
+Adding styling
+
+Starting a new branch
+
+open terminal
+	type..
+		git branch styling
+		git checkout styling
+
+NOTE:
+<!-- Currently on styling branch -->
+
+open views > layouts > application.html.erb
+	edit application.html.erb
+		<!-- creating a side bar -->
+		<!-- check code -->
+
+SIDE NOTE:
+images can be placed in app > assets > images
+
+styling
+
+open app > assets > stylesheets > application.css
+<!-- rename the file name to application.css.scss (.scss extension) so that we can use sass -->
+
+We're going to use normalize. It resets every browser so you're starting
+from the same place so each browser doesn't use a different default styling.
+reference: http://necolas.github.io/normalize.css/3.0.1/normalize.css
+copy/paste the code into the new stylesheet
+Effect: it changes the fonts a bit, removes the margin
+
+create a new stylesheet (it's going to be a partial, i think the file naming 
+convention for partials starts with underscore "_") and paste the normalize code in.
+	within application.css.scss, we're going to import it
+		<!-- @import 'normalize'; -->
+
+He goes on to add css but i just copied/pasted from his github what he had in his application.css.scss to my own also
+
+We still have the posts but they're hidden behind the sidebar at the moment in which this was written out...because we haven't added the wrapper to the application.html.erb.
+
+go to application.html.erb
+we want to add a sign-in button so a user can sign-in
+	type..
+		check code in application.html.erb file for "Admin Login"
+		<!-- this puts the un-clickable link at the bottom of the sidebar -->
+
+He uses Google fonts
+	we add the line of code:
+		<%= stylesheet_link_tag 'application', 'http://fonts.googleapis.com/css?family=Raleway:400,700' %> to our application.html.erb for the specific font
+
+Add main_content area in the sidebar
+	<!-- check code in application.html.erb with id tag "main_content" -->
+	I put the <%= yield %> within the main_content div so that the list of posts (index) and new post form would show rather than being behind the sidebar
+
+Adding a flash message for when the user sign-in/sign-out/creating a new post
+	<!-- look at application.html.erb for code -->
+
+We wrap the new post form in a "page_wrapper" div
+	<!-- check the code in the new.html.erb file -->
+
+We wrap the show.html.erb in a "post_content" div
+	<!-- check the code in the show.html.erb file -->
+
+Commit and merge what we just did--styling
+	git status
+	<!-- untracked modified files -->
+	git add 
