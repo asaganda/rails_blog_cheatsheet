@@ -249,4 +249,43 @@ edit new.html.erb file
   <!-- check code within the form with div id errors -->
 
 Our validations work now
-		
+
+Now we want the ability to edit or delete posts
+
+Let's start with the edit
+open PostsController file
+  <!-- check code for the edit and update methods -->
+
+now we need an edit view form. we will be using the same form as the new. we will go ahead and convert the new one as well as the edit to a partial
+
+create 2 new files
+  <!-- named edit.html.erb -->
+  <!-- another named (a partial) _form.html.erb -->
+    we are going to copy the form from new.html.erb and into _form.html.erb replace it with <%= render 'form' %> which will grab the partial for us
+    <!-- check codes for both files -->
+
+NOTE: rails is smart enough to know what form we are using this for, referencing _form.html.erb whether it is the edit or the new form
+
+NOTE: essentially our form is in only one file however we are "rendering" it elsewhere without having to write it again for convenience. a clear example of DRY (Don't Repeat Yourself), one of the 2 theories of Rails
+
+    we copy the form within new.html.erb and paste it into edit.html.erb
+<!--       check code to see what is different about the edit form versus the new
+ -->
+
+open show.html.erb
+add the ability to edit a post
+  <!-- check code -->
+
+sanity check: go to site and check
+
+No we want to add the ability to delete a post 
+  we have create the method in the posts_controller.rb file
+  <!-- check code -->
+  we need to add a link to delete also--show.html.erb
+  <!-- check code -->
+
+Now we are able to edit an delete posts
+
+He wants to redirect back to the root path rather than the posts path listing all the posts
+
+sanity check: delete working and routing back to the root
