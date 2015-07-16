@@ -351,3 +351,38 @@ Next: deleting posts and the comments attached with it
 open post model, post.rb
 	type..
 	<!-- check code after the comma of the line has_many -->
+We want to create an About page
+
+open terminal
+	type..
+		rails g controller pages
+
+open pages controller
+	<!-- check code under about action -->
+
+open routes.rb and add a route for our About page
+	type..
+		<!-- check code regarding the about page -->
+
+we will get an error template missing because we don't have on yet. let's create one
+	views < pages < about.html.erb
+
+edit about.html.erb
+	he just pastes in some divs/images/content
+		<!-- i just simply put an h1 wrapped in a div which follows the page format as the rest of the pages -->
+
+We have to take care of the about button, it is still empty and can't be clicked
+	
+open views < layouts < application.html.erb
+
+edit application.html.erb
+	type..
+	<!-- check code under sidebar -->
+
+Now we have an About sidebar click...also we can click between About and Blog
+
+He wants the look of the About page to look more clean?
+
+still in application.html.erb
+	 type..
+	 	<!-- check code under main content div -->

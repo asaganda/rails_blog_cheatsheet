@@ -6,6 +6,13 @@ Rails.application.routes.draw do
   end
 
   root 'posts#index'
+
+  # we have this get rather than resources 
+  # because we're only going to have the about page.
+  # this setup makes it so that we don't have to go to
+  # URL /pages/about rather, just /about.
+  get '/about', to: 'pages#about'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
