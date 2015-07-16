@@ -381,8 +381,37 @@ edit application.html.erb
 
 Now we have an About sidebar click...also we can click between About and Blog
 
-He wants the look of the About page to look more clean?
+He wants the top of the page to say "About" so that we know we are at the About page
 
 still in application.html.erb
 	 type..
 	 	<!-- check code under main content div -->
+
+Final thing: Add a user
+
+He wants to add devise in our Gemfile
+
+open Gemfile
+	type..
+	<!-- check code-look at line 44 -->
+	save that file and bundle install in terminal
+
+in terminal
+	type..
+		rails g devise:install
+			this gives steps on how to install..i believe?
+
+I followed what he did..all he did was copy/paste a line into the development.rb
+
+open terminal
+	type..
+		rails g devise:views
+
+Let's generate a user
+open terminal
+	type..
+		rails g devise User
+		<!-- this creates a migration for us as well as a user model -->
+		rake db:migrate
+
+Stopped here because i wasn't able to rake db:migrate
